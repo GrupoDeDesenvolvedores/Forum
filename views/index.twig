@@ -1,0 +1,50 @@
+{% include 'template.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for category in categories %}
+        <div class="col-sm-9">
+            <div class="card forum-feed">
+                <div class="card-header">
+                    <h3>{{ category.name }}</h3>
+                </div>
+                {% for post in posts %}
+                    {% if post.category == category.id %}
+                    <a href=#>
+                        <div class="card-body">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <img class="img-fluid rounded-circle mx-auto d-block" src="/images/GDD.png" />
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <h5 class="card-title">{{ post.title }}</h5>
+                                        <p class="card-text">{{ post.message|slice(0, 80) ~ '...' }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-sm-3 side-panel">
+            <div class="card">
+                <div class="card-header">
+                    <p>Estatísticas do Fórum</p>
+                </div>
+                <div class="card-body">
+                    <div class="col-sm-12">
+                        <p>Usuários registrados: {{ statistics.users }}</p>
+                        <p>Número de postagens: {{ statistics.posts }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

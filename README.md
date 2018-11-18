@@ -4,6 +4,9 @@
 
 <hr>
 
+#### Layout atual:
+<img src="https://raw.githubusercontent.com/GrupoDeDesenvolvedores/Forum/master/scheenshots/atual.png" />
+
 #### Idealizadores:
 
 ###### iTzVoid_ | [RedeLore]#0390

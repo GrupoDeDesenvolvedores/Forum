@@ -3,24 +3,31 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        {% for category in categories %}
         <div class="col-sm-9">
+            {% for category in categories %}
             <div class="card forum-feed">
                 <div class="card-header">
                     <h3>{{ category.name }}</h3>
                 </div>
-                {% for post in posts %}
-                    {% if post.category == category.id %}
+                {% for sub_category in sub_categories %}
+                    {% if sub_category.category == category.id %}
                     <a href=#>
                         <div class="card-body">
                             <div class="col-sm-12">
-                                <div class="row">
+                                <div class="row align-items-center">
                                     <div class="col-sm-2">
-                                        <img class="img-fluid rounded-circle mx-auto d-block" src="/images/GDD.png" />
+                                        <img class="img-fluid rounded-circle mx-auto d-block" src="{{ sub_category.icon }}" />
                                     </div>
-                                    <div class="col-sm-10">
-                                        <h5 class="card-title">{{ post.title }}</h5>
-                                        <p class="card-text">{{ post.message|slice(0, 80) ~ '...' }}</p>
+                                    <div class="col-sm-8">
+                                        <h5 class="card-title">{{ sub_category.name }}</h5>
+                                        <p class="card-text">{{ sub_category.description|slice(0, 100) ~ '...' }}</p>
+                                    </div>
+                                    <div class="col-sm-2 sc-statistics text-center">
+                                        <h5 class="card-title">
+                                            {{ sub_category.posts }}
+                                            <br>
+                                            <small>posts</small>
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
@@ -29,8 +36,8 @@
                     {% endif %}
                 {% endfor %}
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
         <div class="col-sm-3 side-panel">
             <div class="card">
                 <div class="card-header">

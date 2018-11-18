@@ -21,20 +21,20 @@
 #### Linguagens e módulos utilizados:
 
 ```
-Linguages = [
+Linguages = {
   HTML,
   CSS,
   JavaScript
-];
+};
 
-Módulos = [
-  Express
-  Consign
-  Dotenv
-  Helmet
-  Http-errors
-  MySQL2
-  Sequelize
+Módulos = {
+  Express,
+  Consign,
+  Dotenv,
+  Helmet,
+  Http-errors,
+  MySQL2,
+  Sequelize,
   Twig
-];
+};
 ```

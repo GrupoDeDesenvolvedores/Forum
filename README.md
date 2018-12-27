@@ -21,7 +21,7 @@
 #### Linguagens e módulos utilizados:
 
 ```
-Linguages = {
+Linguagens = {
   HTML,
   CSS,
   JavaScript
